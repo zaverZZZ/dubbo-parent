@@ -1,0 +1,31 @@
+server:
+    port: 9090
+    servlet:
+      context-path: /provider
+mybatis-plus:
+    check-config-location: true
+    configuration:
+        map-underscore-to-camel-case: true
+    executor-type: simple
+    mapper-locations: classpath*:mapper/*.xml
+spring:
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        type: com.alibaba.druid.pool.DruidDataSource
+        druid:
+            url: jdbc:mysql://localhost:3306/javatest?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+            username: root
+            password: root
+            initial-size: 10
+            max-active: 100
+            max-pool-prepared-statement-per-connection-size: 20
+            max-wait: 60000
+            min-evictable-idle-time-millis: 300000
+            min-idle: 10
+            pool-prepared-statements: true
+            test-on-borrow: false
+            test-on-return: false
+            test-while-idle: true
+            time-between-eviction-runs-millis: 60000
+            stat-view-servlet:
+                enabled: false
